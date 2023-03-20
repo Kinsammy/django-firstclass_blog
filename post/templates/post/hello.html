@@ -1,11 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Django Class</title>
+    <link  href="{% static 'css/style.css'%}" rel="stylesheet">
 </head>
 <body>
-    <h1 style="color: tomato" >Welcome to Django Cohort 13</h1>
-
+    <h1 >Welcome to Django Cohort 13</h1>
+    <ul>
+<!--        for Loop all the posts-->
+        {% for post in posts %}
+<!--        Passing out information-->
+            <li>{{post.title}}</li>
+            <li>{{post.body}}</li>
+            <li id="author">Posted by: {{post.author}}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
